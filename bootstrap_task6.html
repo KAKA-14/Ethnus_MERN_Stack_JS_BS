@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .container-fluid {
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            height: 100vh;
+        }
+
+        .kk {
+            background-color: rgb(248, 244, 244);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid col-md-6 col-lg-4 ">
+        <div class="kk p-4">
+            <form class="form needs-validation" novalidate>
+                <div class="pt-3">
+                    <label class="form-label" for="name">Name</label>
+                    <div class="input-group has-validation">
+                        <input class="form-control" type="text" id="name" required />
+                        <div class="invalid-feedback">Name is required</div>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <label class="form-label" for="e">Email</label>
+                    <div class="input-group has-validation">
+                        <input class="form-control" type="text" id="e" required />
+                        <div class="invalid-feedback">Email is required</div>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <label class="form-label" for="p">Password</label>
+                    <div class="input-group has-validation">
+                        <input class="form-control" type="text" id="p" required />
+                        <div class="invalid-feedback">Password is required</div>
+                    </div>
+                </div>
+                <div class="pt-3">
+                    <label class="form-label" for="hb">Hobbies</label>
+                    <input class="form-control" type="text" name="hb" id="hb" list="hobbies">
+                    <datalist id="hobbies">
+                        <option value="Reading">
+                        <option value="Writing">
+                        <option value="Singing">
+                        <option value="Dancing">
+                        <option value="Coding">
+                        <option value="Cricket">
+                        <option value="Football">
+                        <option value="Basketball">
+                        <option value="Volleyball">
+                        <option value="Badminton">
+                    </datalist>
+                </div>
+                
+                <div class="text-center pt-3">
+                    <button class="btn btn-danger" style="width: 470px;" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+
+</html>

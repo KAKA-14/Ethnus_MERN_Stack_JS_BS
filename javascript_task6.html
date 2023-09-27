@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        form {
+            background-color: rgb(248, 244, 244);
+            width: 400px;
+            height: 400px;
+            box-shadow: 2px 2px 10px 2px rgb(0, 0, 0, 0.2);
+        }
+
+        #i1 {
+            position: relative;
+            left: 4px;
+        }
+
+        .btn {
+            position: relative;
+            width: 100%;
+        }
+
+        .form-check {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px 10px;
+        }
+        .forgot-password {
+            text-align: right;
+            flex: 1; /* To push the link to the right */
+        }
+    </style>
+</head>
+
+<body>
+    <br><br>
+    <h2 align="center">TASK-6</h2>
+    <center>
+        <form action="https://www.instagram.com" onsubmit="return validate()" class="form m-5">
+            <table class="table table-borderless">
+                <img id="i1" src="./insta.jpg" />
+                <tr>
+                    <td>
+                        <p id="invalid-msg"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="px-4 ">
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" ><i
+                                    class="fa-solid fa-user"></i></span>
+                            <input class="form-control" type="text" id="un" placeholder="Username" required />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="px-4">
+                        <div class="input-group has-validation">
+                            <span class="input-group-text" ><i
+                                    class="fa-solid fa-lock"></i></span>
+                            <input class="form-control" type="password" id="pwd" placeholder="Password" required />
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center"><button type="submit" style="width: 355px;" class="my-2 btn btn-primary">Log
+                            in</button></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="rememberMe" />
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                            <!-- Wrap the "Forgot Password?" link in a div -->
+                            <div class="forgot-password">
+                                <a href="https://www.instagram.com/accounts/password/reset/" class="kk text-primary text-decoration-none">Forgot Password?</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div>
+            <p>Don't have an account! <a href="https://www.instagram.com/accounts/emailsignup/" class="text-decoration-none">Sign up here</a></p>
+        </div>
+    </center>
+    <script>
+        function validate() {
+            var un = document.getElementById("un").value;
+            var pwd = document.getElementById("pwd").value;
+            if (un.length < 5 || pwd.length < 5) {
+                document.getElementById("invalid-msg").innerHTML = `<p class="alert alert-danger">Invalid username or password</p>`;
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>

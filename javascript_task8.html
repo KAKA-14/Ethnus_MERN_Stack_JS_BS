@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            background-image: linear-gradient(rgba(245,221,175,255) 15%,rgba(215,130,180,255) 70%);
+            padding:40px;
+        }
+        #lastid{
+            text-align: right;
+        }
+        .btn{
+            position: relative;
+            background: red;
+            color: white;
+            height: 30px;
+            width: 100px;
+            border-radius: 20px;
+            left: 300px;
+        }
+        .rt{
+            text-align: right;
+        }
+        th{
+            text-align: center;
+            font-size: 150% ;
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <h2 align="center">TASK-8</h2>
+    <form onsubmit="return validate()">
+        <center>
+            <table cellspacing="5">
+                <tr>
+                    <th colspan="2">Registration Form</th>
+                </tr>
+                <tr>
+                    <td class="rt"><label for="fn"><b>First Name</b></label></td>
+                    <td onkeyup="fn()"><input type="text" id="fn" size="80" > </td>
+                    <td id="fnvalid" style="color: red;"></td>
+                </tr>
+                <tr >
+                    <td class="rt"><label for="ln"><b>Last Name</b></label></td>
+                    <td onkeyup="ln()"><input type="text" id="ln" size="80"></td>
+                    <td id="lnvalid" style="color: red;"></td>
+                </tr>
+                <tr>
+                    <td class="rt"><label for="e"><b>Email</b></label></td>
+                    <td onkeyup="mail()"><input type="email" id="e" size="80"/> </td>
+                    <td id="mailvalid" style="color: red;"></td>
+                </tr>
+                <tr>
+                    <td class="rt"><label for="p"><b>Password</b></label></td>
+                    <td onkeyup="pwd()"><input type="password" id="p" size="80"/> </td>
+                    <td id="pwdvalid" style="color: red;"></td>
+
+                </tr>
+                <tr>
+                    <td class="rt"><label for="rep"><b>Re-enter Password</b></label></td>
+                    <td onkeyup="rpwd()"><input type="password" id="rep" size="80"/> </td>
+                    <td id="rpwdvalid" style="color: red;"></td>
+                </tr>
+                <tr>
+                    <td class="rt"> <label for="gender"><b>Gender:</b></label></td>
+                    <td>
+                        <input type="radio" name="gender"/>Male<!-- name attribute takes only one input-->
+                        <hr/>
+                        <input type="radio" name="gender"/>Female
+                    </td>
+                </tr>
+                <tr>
+                    <td class="rt"><label for="a"><b>Age:</b></label></td>
+                    <td onkeyup="age()"><input type="text" id="a" size="80"/> </td>
+                    <td id="agevalid" style="color: red;"></td>
+                </tr>
+                <tr>
+                    <td class="rt"><label for="pn"><b>Phone Number</b></label></td>
+                    <td onkeyup="phone()"><input type="tel" id="pn" size="80"/> </td>
+                    <td id="pvalid" style="color: red;"></td>
+                </tr>
+                <tr>
+                    <td class="rt"><label><b>Address</b></label></td>
+                    <td onkeyup="add()"><textarea style="width: 565px; height: 105px;"></textarea></td>
+                    <td id="advalid" style="color: red;"></td>
+                </tr>
+                <tr>
+                    <td class="rt"><label for="s"><b>State</b></label></td>
+                    <td onkeyup="state()"><input type="text" id="s" size="80"/></td>
+                    <td id="svalid" style="color: red;"></td>
+                </tr>
+                <tr>
+                    <td class="rt"><label><b>Country</b></label></td>
+                    <td>
+                        <select>
+                            <option>Choose your country</option>
+                            <option>India</option>
+                            <option>Sri Lanka</option>
+                            <option>Pakistan</option>
+                            <option>Nepal</option>
+                            <option>Bhutan</option>
+                            <option>Bangladesh</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label><b>Languages Known</b></label></td>
+                    <td>
+                        <input type="checkbox"/>English
+                        <input type="checkbox"/>Kannada
+                        <input type="checkbox"/>Hindi
+                        <input type="checkbox"/>Telugu
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="checkbox"/> Hereby I declare all the given details are true</td>
+                </tr>
+                <tr >
+                    <td colspan="2" id="lastid" >Login to <a href="https://learn.codemithra.com/login/index.php">Ethnus</a> website</td>
+                </tr>
+                <tr>
+                   <td colspan="2" id=""><button  type="submit" class="btn">REGISTER</button></td> 
+                </tr>
+            </table>
+            <div id="val" style="color: red; font-size: 120%;"></div>
+        </center>
+    </form>
+
+    <script src="./javascript_task8.js">
+    </script>
+</body>
+</html>

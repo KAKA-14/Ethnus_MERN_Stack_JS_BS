@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+        }
+        #kk{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:30vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 id="kk">TASK-4</h1>
+    </div>
+    <div class="container">
+    <form class="form pe-4">
+        <table>
+            <tr>
+                <td><button onclick="dt()" type="button">Show Date</button></td>
+            </tr>
+            <tr>
+                    <td id="date">Click on the show date button</td>
+            </tr>
+            <tr>
+                <td><button onclick="ft()" type="button">Show Time</button></td>
+            </tr>
+            <tr>
+                <td id="time">Click on the show time button</td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        const currentDate = new Date();
+        const monthNames = [
+            "January", "February", "March", "April",
+            "May", "June", "July", "August",
+            "September", "October", "November", "December"
+        ];
+        const day = currentDate.getDate();
+        const month = monthNames[currentDate.getMonth()];
+        const year = currentDate.getFullYear();
+        const fullDate = `${day}/${month}/${year}`;
+        const fullTime = currentDate.toString();
+        console.log("Date:", fullDate);
+        console.log("Time:", fullTime);
+        function dt(){
+            document.getElementById("date").textContent=fullDate;
+        }
+        function ft(){
+            document.getElementById("time").textContent=fullTime;
+        }
+
+    </script>
+</body>
+
+</html>

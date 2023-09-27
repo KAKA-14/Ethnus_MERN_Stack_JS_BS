@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #namevalid,
+        #mailvalid,
+        #sitevalid,
+        #Mssgvalid {
+            color: lightcoral;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            /* Center vertically */
+        }
+
+        #kk {
+            display: flex;
+            justify-content: center;
+            /* Center horizontally */
+            align-items: center;
+            height: 30vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 id="kk">TASK-5</h1>
+    </div>
+    <div class="container">
+        <form>
+            <table>
+
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name"></td>
+                    <td id="namevalid"></td>
+                </tr>
+                <tr>
+                    <td><label for="mail">Email:</label></td>
+                    <td><input type="text" id="mail"></td>
+                    <td id="mailvalid"></td>
+                </tr>
+                <tr>
+                    <td><label for="site">Website:</label></td>
+                    <td><input type="text" id="site"></td>
+                    <td id="sitevalid"></td>
+                </tr>
+                <tr>
+                    <td><label for="Message">Message</label></td>
+                    <td><textarea id="Message"></textarea>
+                    <td id="Mssgvalid"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" onclick="return validation()">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function validation() {
+            let x1 = name();
+            let y1 = email();
+            let z1 = website();
+            let w1 = message();
+            return x1 && y1 && z1 && w1;
+        }
+
+        function name() {
+            let n = document.getElementById("name").value;
+            if (n.length === 0) {
+                document.getElementById("namevalid").innerText = "This field is required";
+                return false;
+            }
+            return true;
+        }
+
+        function email() {
+            let n = document.getElementById("mail").value;
+            if (n.length === 0 || !n.includes('@') || !n.includes('.')) {
+                document.getElementById("mailvalid").innerText = "A valid email address is required";
+                return false;
+            }
+            return true;
+        }
+
+        function website() {
+            let n = document.getElementById("site").value;
+            if (n.length === 0 || !n.startsWith('www') || !n.includes('.')) {
+                document.getElementById("sitevalid").innerText = "A valid url is required";
+                return false;
+            }
+            return true;
+        }
+
+        function message() {
+            let n = document.getElementById("Message").value;
+            if (n.length === 0) {
+                document.getElementById("Mssgvalid").innerText = "This field is required";
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+
+</html>
